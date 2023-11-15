@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Preguntas frecuentes</title>
+    <script src="faq.js"></script>
+    <!-- Enlace al archivo CSS con los estilos del logo, el cuadro de búsqueda y la barra de navegación -->
+    <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+    <div class="logo">
+        <a href="home.html"><img src="images/LivePharm.png" alt="Logo"></a>
+      </div>
+    <div class="search">
+        <!-- Aquí puedes poner el cuadro de búsqueda para buscar productos -->
+        <form action="buscar.php" method="get">
+            <input type="text" name="q" placeholder="Buscar productos...">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+    <div class="nav">
+        <!-- Barra de navegación-->
+        <ul>
+            <li><a href="">Medicamentos</a>
+                <ul>
+                    <li><a href="prescription.php">Medicamentos con receta</a></li>
+                    <li><a href="#">Medicamentos de farmacia</a></li>
+                    <li><a href="#">Medicamentos de venta libre</a></li>
+                    <li><a href="#">OTC</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">Preguntas frecuentes</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="">Precios de medicamentos en el mercado internacional</a></li>
+        </ul>
+    </div>
+    <div class="faq">
+        <!-- Sección de las preguntas -->
+        <h2>Preguntas frecuentes</h2>
+        <span onclick="toggleAnswer(event)">
+            ¿La plataforma es lo suficientemente segura?</span>
+        <p>Nuestra plataforma cumple con los más altos estándares de seguridad para proteger la información de los usuarios y garantizar la integridad de las transacciones. Además, trabajamos activamente para evitar especulación de precios en los medicamentos, asegurando que nuestros usuarios obtengan los precios justos.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Puedo pagar con cualquier medio de pago?</span>
+        <p>Sí, en nuestra plataforma ofrecemos diversas opciones de pago para su comodidad. Puede pagar con tarjetas de crédito/débito, PayPal y estamos en proceso de integrar la opción de utilizar su seguro público o privado para sus compras.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Es cierto que la plataforma sobre las compras de productos que yo haga serán enviadas a mi médico?</span>
+        <p>No, la plataforma no compartirá automáticamente las compras de productos con su médico. Solo se compartirá la información de los medicamentos recetados por su médico con el fin de permitir un seguimiento de su salud y garantizar el cumplimiento de las dosis recomendadas.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Cuáles son los plazos de entrega de los medicamentos?</span>
+        <p>El tiempo de entrega varía según su ubicación y la disponibilidad del producto. Por lo general, intentamos realizar entregas lo más rápido posible, y la estimación del plazo se proporcionará al realizar su pedido.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Qué sucede si recibo un medicamento incorrecto o dañado?</span>
+        <p>Si recibe un medicamento incorrecto o dañado, contáctenos de inmediato. Tenemos políticas de devolución y reemplazo para garantizar su satisfacción y seguridad.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Cómo se protege la privacidad de mis datos médicos?</span>
+        <p>Valoramos la privacidad de sus datos médicos. Nuestra plataforma cumple con regulaciones de privacidad y utiliza medidas de seguridad para proteger sus datos médicos. Solo se compartirá la información necesaria con su médico para su seguimiento de salud.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Ofrecen descuentos para jubilados o personas con discapacidades?</span>
+        <p>Sí, ofrecemos descuentos especiales para jubilados y personas con discapacidades. Por favor, póngase en contacto con nuestro servicio de atención al cliente para obtener más detalles y verificar su elegibilidad.</p>
+        <span onclick="toggleAnswer(event)">
+            ¿Cómo puedo contactar al servicio de atención al cliente?</span>
+        <p>Puede comunicarse con nuestro equipo de servicio al cliente a través de nuestro número de teléfono de contacto o a través del correo electrónico de soporte. Estamos disponibles para responder a sus preguntas y brindar asistencia.</p>
+    </div>
+    <div class="footer_below p-border">
+                                
+        <div class="footer_text">LivePharm Panamá 2023, Derechos Reservados</div>
+        </div>
+</body>
+</html>

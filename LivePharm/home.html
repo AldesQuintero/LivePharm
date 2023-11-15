@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+  <title> LivePharm</title>
+</head>
+<body>
+    <div class="logo">
+        <a href="home.html"><img src="images/LivePharm.png" alt="Logo"></a>
+      </div>
+    <div class="search">
+        <!-- Cuadro de búsqueda para productos -->
+        <form action="buscar.php" method="get">
+            <input type="text" name="q" placeholder="Buscar productos...">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+    <!-- Sección de login y carrito de compras -->
+    <div class="login">
+        <a href="login.php"><img src="images/login.png" alt="Iniciar sesión"></a> 
+    </div>
+    
+    <script>
+        function showMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display == "none") {
+                menu.style.display = "block";   
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+    
+    <div class="cart">
+        <a href="cart.html"><img src="images/cart.png" alt="Carrito de compras"></a>
+    </div>
+    <div class="nav">
+        <!-- Barra de navegación -->
+        <ul>
+            <li><a href="#">Medicamentos</a>
+                <ul>
+                    <li><a href="prescription.php">Medicamentos con receta</a></li>
+                    <li><a href="#">Medicamentos de farmacia</a></li>
+                    <li><a href="#">Medicamentos de venta libre</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">Preguntas frecuentes</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="medicines.html">Precios de medicamentos en el mercado internacional</a></li>
+        </ul>
+    </div>
+    <!--Segunda sección, productos -->
+    <div class="products">
+        <!-- Productos-->
+        <div class="product">
+            <img src="images/Jabón Protex.png" alt="Jabon Protex">
+            <h3>Jabón Protex</h3>
+            <p>$5.00</p> 
+            <button onclick="agregarAlCarrito('Jabón Protex', 5.00)">Agregar</button>  <!--Función de agregar productos
+            al carrito -->
+           
+        </div>
+        <div class="product">
+            <img src="images/Asepxia carbon.png" alt="Ibuprofeno">
+            <h3>Jabón Asepxia Carbón</h3>
+            <p>$7.00</p>
+            <button onclick="agregarAlCarrito('Jabón Asepxia Carbón', 7.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Pedialyte uva.jpg" alt="Pedialyte">
+            <h3>Pedialyte</h3>
+            <p data-price="6.00">$6.00</p>
+            <button onclick="agregarAlCarrito('Pedialyte', 6.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Asepxia toallitas.jpg" alt="Toallitas Asepxia">
+            <h3>Toallitas Asepxia</h3>
+            <p data-price="8.00">$8.00</p>
+            <button onclick="agregarAlCarrito('Toallitas Asepxia', 8.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Pepto bismol.jpg" alt="Pepto Bismol">
+            <h3>Pepto Bismol</h3>
+            <p data-price="8.00">$8.00</p>
+            <button onclick="agregarAlCarrito('Pepto Bismol', 8.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Tensiométro.jpg" alt="Tensiométro">
+            <h3>Tensiométro</h3>
+            <p data-price="8.00">$8.00</p>
+            <button onclick="agregarAlCarrito('Tensiométro', 5.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Medidor de Glucosa.jpg" alt="Aspirina">
+            <h3>Medidor de Glucosa</h3>
+            <p data-price="5.00">$5.00</p>
+            <button onclick="agregarAlCarrito('Medidor de Glucosa', 5.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Colgate Luminous White.jpg" alt="Pasta de Diente">
+            <h3>Pasta de Diente</h3>
+            <p data-price="5.00">$5.00</p>
+            <button onclick="agregarAlCarrito('Pasta de Diente', 7.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Head Showlders.jpg" alt="Shampoo">
+            <h3>Shampoo Head&Showlders Caballero</h3>
+            <p data-price="5.00">$5.00</p>
+            <button onclick="agregarAlCarrito('Shampoo Head&Showlders', 6.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+        <div class="product">
+            <img src="images/Acondicionador Head Showlders.jpg" alt="Acondicionador">
+            <h3>Acondicionador Head&Showlders</h3>
+            <p data-price="8.00">$8.00</p>
+            <button onclick="agregarAlCarrito('Acondicionador Head&Showlders', 8.00)">Agregar</button> <!--Función de agregar productos
+                al carrito -->
+        </div>
+
+     <script src="carrito.js"></script> <!--Envía las funciones de agregar producto al carrito al script donde
+        se almancena los productos -->
+            
+        </div>
+    </div>
+</body>
+</html>
+
+</html>
+</html>
+
+<div class="footer_below p-border">
+                                
+<div class="footer_text">LivePharm Panamá 2023, Derechos Reservados</div>
+</div>
+                                                             
+<head>
+  <link rel="stylesheet" href="home.css"> <!-- Conexión de la página con los estilos CSS y Scripts-->
+  <script src="home.js"></script> 
+</head>
+

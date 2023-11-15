@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>LivePharm</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="logo">
+    <a href="home.html"><img src="images/LivePharm.png" alt="Logo"></a>
+  </div>
+  <div class="search">
+    <form action="buscar.php" method="get">
+      <input type="text" name="q" placeholder="Buscar productos...">
+      <input type="submit" value="Buscar">  <!-- Buscar en la base de datos los productos disponibles-->
+    </form>
+  </div>
+  <div class="login">
+    <a href="login.php"><img src="images/login.png" alt="Iniciar sesión"></a>
+  </div>
+  <div class="cart">
+    <a href="cart.html"><img src="images/cart.png" alt="Carrito de compras"></a>
+  </div>
+  <div class="nav">
+    <ul>
+      <li><a href="#">Medicamentos</a>
+        <ul>   <!-- sección de la barra-->
+          <li><a href="prescription.php">Medicamentos con receta</a></li>
+          <li><a href="pharmmedicines.html">Medicamentos de farmacia</a></li>
+          <li><a href="#">Medicamentos de venta libre</a></li>
+        </ul>
+      </li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+      <li><a href="medicines.html">Precios de medicamentos en el mercado internacional</a></li>
+    </ul>
+  </div>
+  <div id="lista-productos"></div>
+
+  <script>
+    fetch('cart.php')  //Peticiones al servidor 
+      .then(response => response.json())
+      .then(data => {
+        const listaProductos = document.getElementById('lista-productos'); /* Almacenamiento de la referencia de acuerdo al ID*/
+
+        if (data && data.length > 0) {
+          const lista = document.createElement('ul'); /* Comprueba que la variable data exista*/
+
+          data.forEach(producto => { /* Itera los productos por medio de una lista*/
+            const itemLista = document.createElement('li');
+            itemLista.textContent = `${producto.nombre} - Precio: $${producto.precio}`;
+            lista.appendChild(itemLista); /*  lista*/
+          });
+
+          listaProductos.appendChild(lista);
+        } else {
+          listaProductos.textContent = 'No hay productos en el carrito.';
+        }
+      })
+      .catch(error => {
+        console.error('Error al obtener los productos del carrito:', error);
+      });
+  </script>
+
+
+<style>
+    /* Estilos para el logo, el cuadro de búsqueda y la barra de navegación */
+.logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+}
+.search {
+  float: left;
+  margin: 25px 125px 0 100px;
+}
+.search input[type="text"] {
+  width: 500px;
+  height: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+}
+.search input[type="submit"] {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background: #ccc;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  border-radius: 10px;
+}
+/* Agregar dos elementos más al lado del cuadro de búsqueda */
+.login {
+    float: left;
+    margin: 25px 0 0 0;
+}
+.login img {
+    width: 50px;
+    height: 50px;
+}
+.cart {
+    float: left;
+    margin: 25px 0 0 0;
+}
+.cart img {
+    width: 50px;
+    height: 50px;
+}
+.nav {
+    clear: both;
+    background: #AED6F1;
+    padding: 10px;
+    border-radius: 25px;   
+}
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;   
+    border-radius: 10px; /*Despliegue del menú de medicamentos*/
+}
+.nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.nav li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+.nav li:hover {
+    background: #5499C7;
+    border-radius: 10px;
+}
+.nav li:hover ul {
+    display: block;
+}
+.nav li ul {
+    display: none;
+    position: absolute;
+    background: #2980B9;
+    padding: 10px;
+}
+.nav li ul li {
+    display: block;
+    margin: 0;
+}
+/* Sección productos */
+
+/* Estilos para los productos */
+.products {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /*border-radius: 10px; */
+}
+.product {
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+.product img {
+    width: 200px;
+    height: 200px;
+}
+.product h3 {
+    font-size: 20px;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+.product p {
+    font-size: 18px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+.product button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    background: #ccc;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/* Estilos generales del footer */
+.footer_below {
+    background-color: #2471A3 ;
+    color: white;
+    padding: 20px;
+  }
+  /* Estilos para el texto del footer */
+  .footer_text {
+    font-size: 14px;
+    text-align: center; /* Alineación centrada del texto */
+    margin-top: 10px; /* Espaciado superior */
+    border-radius: 10px;
+  }
+
+</style>
+
+</body>
+</html>
